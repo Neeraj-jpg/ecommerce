@@ -1,0 +1,448 @@
+/* =============================== */
+/* TEMPLE DOOR OPENING */
+/* =============================== */
+
+.temple-opening {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 99999;
+
+    overflow: hidden;
+}
+
+.temple-sky {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #08051b 0%,
+            #201348 30%,
+            #71385b 60%,
+            #d47a3b 82%,
+            #f5bd61 100%
+        );
+}
+
+/* MOON */
+
+.moon {
+    position: absolute;
+
+    top: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 70px;
+
+    filter:
+        drop-shadow(0 0 15px white)
+        drop-shadow(0 0 30px #ffd76a);
+}
+
+/* STARS */
+
+.stars {
+    position: absolute;
+
+    top: 12%;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 20px;
+
+    line-height: 3;
+
+    opacity: 0.8;
+}
+
+/* =============================== */
+/* 7 HILLS */
+/* =============================== */
+
+.hills {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 45%;
+}
+
+.hill {
+    position: absolute;
+
+    bottom: -120px;
+
+    width: 45%;
+    height: 300px;
+
+    border-radius: 50% 50% 0 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #252515,
+            #080805
+        );
+}
+
+.hill1 {
+    left: -20%;
+}
+
+.hill2 {
+    left: -5%;
+    bottom: -150px;
+}
+
+.hill3 {
+    left: 12%;
+    bottom: -90px;
+}
+
+.hill4 {
+    left: 28%;
+    bottom: -140px;
+}
+
+.hill5 {
+    left: 45%;
+    bottom: -100px;
+}
+
+.hill6 {
+    left: 62%;
+    bottom: -150px;
+}
+
+.hill7 {
+    left: 78%;
+    bottom: -90px;
+}
+
+/* =============================== */
+/* TEMPLE */
+/* =============================== */
+
+.temple-gopuram {
+    position: absolute;
+
+    left: 50%;
+    bottom: 12%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    text-align: center;
+}
+
+.gopuram-symbol {
+    font-size: 85px;
+
+    filter:
+        drop-shadow(0 0 10px #ffbf45)
+        drop-shadow(0 0 20px #ff9d00);
+}
+
+.om-symbol {
+    width: 120px;
+    height: 100px;
+
+    margin: -10px auto 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #713707,
+            #e0a133,
+            #713707
+        );
+
+    color: #ffe08a;
+
+    font-size: 40px;
+
+    border-radius:
+        50% 50% 10px 10px;
+
+    box-shadow:
+        0 0 20px #ffb300,
+        inset 0 0 20px #422000;
+}
+
+/* =============================== */
+/* TEMPLE DOORS */
+/* =============================== */
+
+.temple-door {
+    position: absolute;
+
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    z-index: 20;
+
+    background:
+        linear-gradient(
+            90deg,
+            #321300,
+            #713607,
+            #c27a1c,
+            #e4a934,
+            #7a3b08,
+            #321300
+        );
+
+    border: 12px solid #e4b54d;
+
+    box-shadow:
+        inset 0 0 40px #180800,
+        0 0 25px #d99b2b;
+
+    /*
+       DOORS TAKE EXACTLY 5 SECONDS
+       TO OPEN
+    */
+
+    transition:
+        transform 5s
+        cubic-bezier(
+            0.7,
+            0,
+            0.2,
+            1
+        );
+}
+
+/* LEFT DOOR */
+
+.left-door {
+    left: 0;
+
+    transform-origin: left center;
+
+    transform:
+        perspective(1000px)
+        rotateY(-100deg);
+}
+
+/* RIGHT DOOR */
+
+.right-door {
+    right: 0;
+
+    transform-origin: right center;
+
+    transform:
+        perspective(1000px)
+        rotateY(100deg);
+}
+
+/* =============================== */
+/* DOOR DECORATION */
+/* =============================== */
+
+.temple-door::before {
+    content: "";
+
+    position: absolute;
+
+    top: 20%;
+    left: 12%;
+    right: 12%;
+
+    height: 25%;
+
+    border: 5px solid #ffd66a;
+
+    border-radius: 15px;
+}
+
+.temple-door::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 20%;
+    left: 12%;
+    right: 12%;
+
+    height: 25%;
+
+    border: 5px solid #ffd66a;
+
+    border-radius: 15px;
+}
+
+.door-om {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    font-size: 75px;
+
+    color: #ffd45c;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #ffad00;
+}
+
+/* =============================== */
+/* WELCOME */
+/* =============================== */
+
+.welcome-text {
+    position: absolute;
+
+    z-index: 15;
+
+    top: 45%;
+    left: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 30px;
+
+    letter-spacing: 8px;
+
+    text-shadow:
+        0 0 10px black,
+        0 0 20px #ffb000;
+
+    animation:
+        welcomeAnimation
+        5s ease forwards;
+}
+
+.om-large {
+    font-size: 70px;
+
+    color: #ffd45c;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 30px #ffae00;
+}
+
+@keyframes welcomeAnimation {
+
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* =============================== */
+/* WEBSITE */
+/* =============================== */
+
+.main-website {
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.website-hidden {
+    opacity: 0;
+
+    transform: scale(1.03);
+}
+
+.website-visible {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+/* =============================== */
+/* MOBILE */
+/* =============================== */
+
+@media (max-width: 768px) {
+
+    .moon {
+        font-size: 50px;
+    }
+
+    .gopuram-symbol {
+        font-size: 60px;
+    }
+
+    .om-symbol {
+        width: 90px;
+        height: 80px;
+
+        font-size: 30px;
+    }
+
+    .door-om {
+        font-size: 45px;
+    }
+
+    .temple-door {
+        border-width: 7px;
+    }
+
+    .welcome-text {
+        font-size: 20px;
+    }
+
+    .om-large {
+        font-size: 50px;
+    }
+}
